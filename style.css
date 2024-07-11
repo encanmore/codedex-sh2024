@@ -21,7 +21,7 @@ body {
 .navbar {
     background-color: #d9e8ce;
     padding: 10px;
-    width: 250px;
+    width: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,38 @@ body {
 }
 
 .content {
-    flex-grow: 1;
-    background-color: #f5f8ef;
+    flex: 1;
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    gap: 20px;
     padding: 20px;
+}
+
+.card {
+    background-color: #d9e8ce;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.title {
+    background-color: #b0c994;
+}
+
+.title h1, .type h1 {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.cardimg {
+    height: 100px;
+    background-color: #eee;
+    margin-bottom: 10px;
+}
+
+.type,
+.details {
+    font-size: 0.9em;
 }
