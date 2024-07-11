@@ -11,7 +11,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #c4c4c4;
+    background-color: #f5f8ef;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,14 +28,21 @@ body {
 }
 
 .navbtn {
-    background-color: #b0ca94;
-    border: none;
-    color: #000;
-    padding: 10px;
-    margin: 5px 0;
+    background-image: url("./assets/images/pawn.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
-    text-align: left;
+    height: 80px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
     font-size: 16px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
