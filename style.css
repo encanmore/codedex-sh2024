@@ -26,7 +26,6 @@ span {
     width: 50%;
     border-radius: 50%;
     background-color: #f5f8ef;
-    margin-top: 90px;
     margin-bottom: 20px;
 }
 
@@ -37,10 +36,12 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     position: fixed;
     height: 100vh;
+    top: 0;
+    bottom: 0; 
     overflow-y: auto;
     scrollbar-width: none;
 }
@@ -80,6 +81,9 @@ span {
     padding: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
 input, textarea {
@@ -91,10 +95,14 @@ textarea {
     height: 100%;
 }
 
-.fbcontent .card {
-    padding: 10px;
-    margin-left: 20px;
-    width: 80%;
+.fbcontent-card {
+    background-color: #d9e8ce;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
 }
 
 .card {
@@ -147,6 +155,67 @@ textarea {
     font-size: 1.2em;
 }
 
+/* About Page */
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-left: 15%;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.about-card {
+    background-color: #d9e8ce;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+.about-card .title {
+    background-color: #b0c994;
+}
+
+.about-card .type, .about-card .details {
+    background-color: #c4d8b2;
+}
+
+.about-card .title h1 {
+    font-size: 2em;
+    margin: 0 0 10px 0;
+}
+
+.about-card .type h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+}
+
+.about-card .cardimg {
+    height: 450px;
+    background-color: #eee;
+    margin-bottom: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #b0c994;
+    overflow: hidden;
+}
+
+.about-card .cardimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-card .details {
+    font-size: 1.2em;
+}
+
 /* Collection Page */
 .collection-container {
     flex: 1;
@@ -190,13 +259,13 @@ textarea {
 }
 
 @media (max-width: 768px) {
-    .collection-container {
+    .collection-content {
         flex-direction: column;
         align-items: center;
     }
     .dice-container {
-        width: 40%;
-        height: 40%;
+        width: 30%;
+        height: 30%;
     }
 }
 
@@ -212,4 +281,17 @@ textarea {
     cursor: pointer;
     background-color: black;
     color: #b0c994;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 20%;
+        margin-right: 0;
+        height: 100%; 
+        position: static; 
+    }
+    .content {
+        margin-left: 0;
+        display: block;
+    }
 }
