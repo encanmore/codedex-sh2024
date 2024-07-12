@@ -24,11 +24,12 @@ span {
     width: 50%;
     border-radius: 50%;
     background-color: #f5f8ef;
+    margin-top: 90px;
     margin-bottom: 20px;
 }
 
 .navbar {
-    background-color: #d9e8ce;
+    background-color: #d9e8ce; 
     padding: 10px;
     width: 15%;
     display: flex;
@@ -38,6 +39,8 @@ span {
     text-align: center;
     position: fixed;
     height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .navbtn {
@@ -57,6 +60,7 @@ span {
     font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .content {
@@ -141,7 +145,60 @@ textarea {
     font-size: 1.2em;
 }
 
-.reserve, .server,  .news, .sendbtn {
+/* Collection Page */
+.collection-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.collection-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 2em; 
+    padding: 20px;
+}
+
+.main-content h3 {
+    font-size: 1.5em; 
+    font-weight: normal;
+}
+
+#recommended-game {
+    font-weight: bold;
+    color: #b0c994;
+}
+
+.dice-container {
+    width: 30%;
+    height: 30%;
+    border: 3px solid #b0c994;
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .collection-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .dice-container {
+        width: 40%;
+        height: 40%;
+    }
+}
+
+.reserve, .server, .news, .sendbtn {
     background-color: #b0c994;
     border: 1px solid black;
     padding: 10px 10px;
