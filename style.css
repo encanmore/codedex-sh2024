@@ -176,7 +176,7 @@ span {
     }
 }
 
-.reserve, .server {
+.reserve, .server,  .news {
     background-color: #b0c994;
     border: 1px solid black;
     padding: 10px 10px;
@@ -184,6 +184,8 @@ span {
     margin: 10px 10px;
 }
 
-.reserve:hover, .server:hover {
+.reserve:hover, .server:hover, .news:hover {
     cursor: pointer;
+    background-color: black;
+    color: #b0c994;
 }
