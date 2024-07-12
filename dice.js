@@ -1,8 +1,10 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { games } from './db.js';
 
 const container = document.querySelector('.dice-container');
 const canvas = container.querySelector('canvas');
+const gameInfo = document.getElementById('game-info');
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -12,7 +14,6 @@ renderer.setSize(container.clientWidth, container.clientHeight);
 
 renderer.setClearColor(new THREE.Color(0xffffff), 0);
 
-// Position the camera at an angle to the dice
 camera.position.set(1, 4, 3);
 camera.lookAt(0, 0, 0);
 
@@ -40,7 +41,7 @@ loader.load('../assets/3dmodels/dice.glb', function (gltf) {
 let rolling = false;
 let velocity = new THREE.Vector3();
 let angularVelocity = new THREE.Vector3();
-let initialPosition = new THREE.Vector3(0, 0, 0); 
+let initialPosition = new THREE.Vector3(0, 0, 0);
 
 const boxWidth = 2;
 const boxHeight = 2;
@@ -58,10 +59,9 @@ function animate() {
 
         velocity.y -= 0.01;
 
-        // Boundary constraints
         if (dice.position.x > boxWidth) {
             dice.position.x = boxWidth;
-            velocity.x *= -0.5; 
+            velocity.x *= -0.5;
         }
         if (dice.position.x < -boxWidth) {
             dice.position.x = -boxWidth;
@@ -84,7 +84,6 @@ function animate() {
             velocity.z *= -0.5;
         }
 
-        // Check if the dice has landed
         if (dice.position.y <= initialPosition.y) {
             dice.position.y = initialPosition.y;
             rolling = false;
@@ -99,15 +98,30 @@ function rollDice() {
     if (dice) {
         rolling = true;
         velocity.set(
-            (Math.random() - 0.4) * 0.2, 
-            (Math.random() + 0.4) * 0.2,  
-            (Math.random() - 0.4) * 0.2  
+            (Math.random() - 0.4) * 0.2,
+            (Math.random() + 0.4) * 0.2,
+            (Math.random() - 0.4) * 0.2
         );
         angularVelocity.set(
-            (Math.random() - 0.4) * 0.2, 
+            (Math.random() - 0.4) * 0.2,
             (Math.random() - 0.4) * 0.2,
             (Math.random() - 0.4) * 0.2
         );
+        displayRandomGame();
+    }
+}
+
+function displayRandomGame() {
+    const randomIndex = Math.floor(Math.random() * games.length);
+    const selectedGame = games[randomIndex];
+
+    if (gameInfo) {
+        gameInfo.innerHTML = `<h2>${selectedGame.name}</h2><p>${selectedGame.description}</p>`;
+    }
+
+    const recommendedGameElement = document.getElementById('recommended-game');
+    if (recommendedGameElement) {
+        recommendedGameElement.innerText = selectedGame.name;
     }
 }
 
@@ -117,7 +131,7 @@ function setDiceFace() {
 
     switch (faceIndex) {
         case 1:
-            dice.rotation.set(0, 0, 0); // Adjusted rotation for face 1
+            dice.rotation.set(0, 0, 0);
             break;
         case 2:
             dice.rotation.set(0, Math.PI / 2, Math.PI / 2);
@@ -137,7 +151,7 @@ function setDiceFace() {
     }
 }
 
-document.addEventListener('click', rollDice);
+container.addEventListener('click', rollDice);
 
 animate();
 

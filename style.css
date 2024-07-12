@@ -19,7 +19,7 @@ body {
 }
 
 .navbar {
-    background-color: #d9e8ce;
+    background-color: #d9e8ce; 
     padding: 10px;
     width: 15%;
     display: flex;
@@ -44,6 +44,7 @@ body {
     font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .content {
@@ -85,38 +86,53 @@ body {
 
 /* Collection Page */
 .collection-container {
+    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .collection-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
-.main-content {
-    width: 100%;
+
+.main-content h1 {
+    font-size: 2em; 
+    padding: 20px;
 }
+
+.main-content h3 {
+    font-size: 1.5em; 
+    font-weight: normal;
+}
+
+#recommended-game {
+    font-weight: bold;
+    color: #b0c994;
+}
+
 .dice-container {
     width: 30%;
     height: 30%;
-    border: 1px solid #ccc;
+    border: 3px solid #b0c994;
     position: relative;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
-canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
+
 @media (max-width: 768px) {
     .collection-container {
         flex-direction: column;
         align-items: center;
     }
     .dice-container {
-        width: 100%;
+        width: 40%;
         height: 40%;
     }
 }
