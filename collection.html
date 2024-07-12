@@ -12,17 +12,25 @@
             <a href="./index.html"><img src="./assets/images/sipnplaylogo.png" alt="Sip & Play Logo" id="logo"></a>
             <!-- navbtn are the navigation items that are the game pieces. -->
             <a href="./about.html"><div class="navbtn">About</div></a>
-            <a href="https://exploretock.com/sipnplay"><div class="navbtn">Reservations</div></a>
+            <a href="https://exploretock.com/sipnplay" target="_blank"><div class="navbtn">Reservations</div></a>
             <a href="./mtgschedule.html"><div class="navbtn">MTG Schedule</div></a>
             <a href="./collection.html"><div class="navbtn">Our Game Collection</div></a>
             <a href="./menu.html"><div class="navbtn">Menu</div></a>
             <a href="./feedback.html"><div class="navbtn">Feedback</div></a>
-            <a href="https://squareup.com/gift/SWP5P3242C38Q/order"><div class="navbtn">Gift Cards</div></a>
+            <a href="https://squareup.com/gift/SWP5P3242C38Q/order" target="_blank"><div class="navbtn">Gift Cards</div></a>
             <a href="./press.html"><div class="navbtn">Press</div></a>
         </div>
-        <div class="content">
-            <!-- Content will go here. -->
+        <div class="collection-content">
+            <div class="main-content">
+                <div class="title"><h1>Our Game Collection</h1></div>
+                <div><h3>Click on the dice to reveal your recommedation!</h3></div>
+                <div><h3>Your Recommended Game is: <span id="recommended-game"></span></h3></div>
+            </div>
+            <div class="dice-container">
+                <canvas></canvas>
+            </div>
         </div>
     </div>
+    <script type="module" src="dice.js"></script>
 </body>
 </html>
