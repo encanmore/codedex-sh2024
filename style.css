@@ -69,6 +69,28 @@ span {
     margin-left: 15%;
 }
 
+.fbcontent {
+    margin-left: 15%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+input, textarea {
+    margin-left: 5px;
+    width: 95%;
+}
+
+textarea {
+    height: 100%;
+}
+
+.fbcontent .card {
+    padding: 10px;
+    margin-left: 20px;
+    width: 80%;
+}
+
 .card {
     background-color: #d9e8ce;
     border: 1px solid #ddd;
@@ -119,7 +141,7 @@ span {
     font-size: 1.2em;
 }
 
-.reserve, .server,  .news {
+.reserve, .server,  .news, .sendbtn {
     background-color: #b0c994;
     border: 1px solid black;
     padding: 10px 10px;
@@ -127,7 +149,7 @@ span {
     margin: 10px 10px;
 }
 
-.reserve:hover, .server:hover, .news:hover {
+.reserve:hover, .server:hover, .news:hover, .sendbtn:hover {
     cursor: pointer;
     background-color: black;
     color: #b0c994;
