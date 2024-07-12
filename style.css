@@ -24,6 +24,7 @@ span {
     width: 50%;
     border-radius: 50%;
     background-color: #f5f8ef;
+    margin-top: 90px;
     margin-bottom: 20px;
 }
 
@@ -38,6 +39,8 @@ span {
     text-align: center;
     position: fixed;
     height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 .navbtn {
